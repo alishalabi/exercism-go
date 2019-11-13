@@ -28,14 +28,14 @@ type DNA struct {
 func (d DNA) Counts() (Histogram, error) {
 	var h Histogram
 
-	for index; index < len(d.composition); index++ {
-		if d[index] == A {
+	for index := 0; index < len(d.composition); index++ {
+		if d.composition[index] == "A" {
 			h.A++
-		} else if d[index] == C {
+		} else if d.composition[index] == "C" {
 			h.C++
-		} else if d[index] == G {
+		} else if d.composition[index] == "G" {
 			h.G++
-		} else if d[index] == T {
+		} else if d.composition[index] == "T" {
 			h.T++
 		}
 	}
