@@ -26,7 +26,7 @@ func stringIsUpper(input string) bool {
 
 	for i := 0; i < len(r); i++ {
 		ch := r[i]
-		if unicode.isUpper(ch) == false {
+		if unicode.IsUpper(ch) == false {
 			return false
 		}
 	}
