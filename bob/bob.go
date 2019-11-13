@@ -26,9 +26,12 @@ func stringIsUpper(input string) bool {
 
 	for i := 0; i < len(r); i++ {
 		ch := r[i]
-		if unicode.IsUpper(ch) == false {
-			return false
+		if unicode.IsLetter(ch) {
+			if unicode.IsUpper(ch) == false {
+				return false
+			}
 		}
+
 	}
 	return true
 }
@@ -38,7 +41,7 @@ func Speak(input string) string {
 		return "Sure."
 	} else if input == ""{
 		return "Fine. Be that way!"
-	} else if stringIsUpper(input) && input[len(input):] == "?"{
+	} else if stringIsUpper(input) && input[len(input) - 1:] == "?"{
 		return "Calm down, I know what I'm doing!"
 	} else if stringIsUpper(input) {
 		return "Whoa, chill out!"
