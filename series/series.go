@@ -21,10 +21,23 @@ import (
 )
 
 func getSeries(input string, length int) []string {
-  output := []string
+  output := []string{}
   if length > len(input) {
-    return ouput
+    fmt.Println("Error: desired series length is longer than string")
+    return output
   }
-  
+  for index := 0; index < (len(input) - length + 1); index++ {
+    series := input[index:(index + length)]
+    // fmt.Println("Series: ", series)
+    output = append(output, series)
+  }
+  return output
 
+}
+
+
+func main() {
+  fmt.Println(getSeries("12345", 3))
+  getSeries("123", 5)
+  fmt.Println(getSeries("1234556", 4))
 }
