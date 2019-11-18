@@ -2,6 +2,7 @@ package main
 
 import(
   "fmt"
+  "strings"
 )
 
 func setMap() map[string]int {
@@ -49,7 +50,14 @@ func setMap() map[string]int {
   return m
 }
 
-func main() {
+func getScore(input string) {
   m := setMap()
-  fmt.Println(m)
+  upperInput := strings.ToUpper(input)
+  for _, letter := range upperInput {
+    fmt.Println(string(letter))
+  }
+}
+
+func main() {
+  getScore("Hello")
 }
