@@ -50,14 +50,20 @@ func setMap() map[string]int {
   return m
 }
 
-func getScore(input string) {
+func getScore(input string) int {
+  score := 0
   m := setMap()
   upperInput := strings.ToUpper(input)
   for _, letter := range upperInput {
-    fmt.Println(string(letter))
+    // fmt.Println(string(letter))
+    letterScore := m[string(letter)]
+    // fmt.Println(letterScore)
+    score += letterScore
+
   }
+  return score
 }
 
 func main() {
-  getScore("Hello")
+  fmt.Println(getScore("Hello"))
 }
