@@ -6,7 +6,9 @@ import(
 )
 
 func setMap() map[string]int {
-  m := make(map[string]int)
+  m := make(map[rune]int)
+  // keys should be runes
+  // map[int][]rune
 
   // 1's
   m["A"] = 1
@@ -56,7 +58,7 @@ func getScore(input string) int {
   upperInput := strings.ToUpper(input)
   for _, letter := range upperInput {
     // fmt.Println(string(letter))
-    letterScore := m[string(letter)]
+    letterScore := m[letter]
     // fmt.Println(letterScore)
     score += letterScore
 
